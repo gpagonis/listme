@@ -12,7 +12,7 @@ extends WebPage{
 	private static final long serialVersionUID = 1L;
 	
 	public TestPage(){
-		add(new Label(("hello"), "hello world"));
+		add(new Label(("hello"), "Listme begins"));
 	}
 
 }

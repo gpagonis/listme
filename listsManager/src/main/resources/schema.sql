@@ -1,3 +1,9 @@
+drop table users_followed;
+drop table lists_followed;
+drop table list_item;
+drop table list_;
+drop table user_;
+
 create table user_ (
 	username varchar(50) not null,
 	fname varchar(50) not null,
@@ -7,7 +13,7 @@ create table user_ (
 );
 
 create table list_ (
-	code int not null AUTO_INCREMENT,
+	code int(10) UNSIGNED not null AUTO_INCREMENT,
 	title varchar(140) not null,
 	username varchar(50) not null,
 	primary key (code),
@@ -15,8 +21,8 @@ create table list_ (
 );
 
 create table list_item (
-	code int not null AUTO_INCREMENT,
-	list_code int not null,
+	code int(10) UNSIGNED not null AUTO_INCREMENT,
+	list_code int(10) UNSIGNED not null,
 	descr varchar(140) not null,
 	url varchar(140) not null,
 	pic blob,
@@ -26,7 +32,7 @@ create table list_item (
 
 create table lists_followed (
 	username varchar(50) not null,
-	list_code int not null,
+	list_code int(10) UNSIGNED not null,
 	primary key (username, list_code),
 	foreign key (username) references user_(username),
 	foreign key (list_code) references list_(code)

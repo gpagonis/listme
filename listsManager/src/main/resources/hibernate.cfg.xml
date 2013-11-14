@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">listmeuser</property>
+        <property name="hibernate.connection.url">jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/listmedb</property>
+        <property name="hibernate.connection.username">listmeuser</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <mapping resource="com/listme/model/User.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.listme.model.User" table="user_" schema="listmedb">
+        <id name="username" type="string">
+            <column name="username" length="50" not-null="true" unique="true"/>
+        </id>
+        <property name="firstName" type="string">
+            <column name="fname" length="50" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lname" length="50" />
+        </property>
+        <property name="profileImg" type="binary">
+            <column name="pic" />
+        </property>
+    </class>
+</hibernate-mapping>

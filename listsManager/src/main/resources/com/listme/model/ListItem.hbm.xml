@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.listme.model.ListItem" table="list_item" schema="listmedb">
+        <id name="code" type="java.lang.Integer">
+            <column name="code" />
+            <generator class="identity" />
+        </id>
+        <property name="url" type="string">
+            <column name="url" length="140" />
+        </property>
+        <property name="description" type="string">
+            <column name="descr" length="140" />
+        </property>
+        <property name="thumbnail" type="binary">
+            <column name="pic" />
+        </property>
+    </class>
+</hibernate-mapping>

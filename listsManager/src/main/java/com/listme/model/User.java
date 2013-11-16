@@ -21,9 +21,9 @@ implements Serializable{
 	
 	private Image profileImg;
 	
-	List<CustomList> myLists = new ArrayList<CustomList>();
+	List<UserList> favoriteLists = new ArrayList<UserList>();
 	
-	List<CustomList> favoriteLists = new ArrayList<CustomList>();
+	List<User> favoriteUsers = new ArrayList<User>();
 	
 	public String getUsername() {
 		return username;
@@ -57,20 +57,20 @@ implements Serializable{
 		this.profileImg = profileImg;
 	}
 	
-	public List<CustomList> getMyLists() {
-		return myLists;
-	}
-	
-	public void setMyLists(List<CustomList> myLists) {
-		this.myLists = myLists;
-	}
-	
-	public List<CustomList> getFavoriteLists() {
+	public List<UserList> getFavoriteLists() {
 		return favoriteLists;
 	}
 	
-	public void setFavoriteLists(List<CustomList> favoriteLists) {
+	public void setFavoriteLists(List<UserList> favoriteLists) {
 		this.favoriteLists = favoriteLists;
+	}
+	
+	public List<User> getFavoriteUsers() {
+		return favoriteUsers;
+	}
+	
+	public void setFavoriteUsers(List<User> favoriteUsers) {
+		this.favoriteUsers = favoriteUsers;
 	}
 
 }

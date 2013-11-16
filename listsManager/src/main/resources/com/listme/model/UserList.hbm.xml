@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.listme.model.UserList" table="list_" schema="listmedb">
+        <id name="code" type="java.lang.Integer">
+            <column name="CODE" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="50" />
+        </property>
+        <many-to-one name="user" class="com.listme.model.User" column="USERNAME"/>
+        <set name="items" inverse="true" order-by="code">
+        	<key column="list_code"/>
+        	<one-to-many class="com.listme.model.ListItem"/>
+        </set>
+    </class>
+</hibernate-mapping>

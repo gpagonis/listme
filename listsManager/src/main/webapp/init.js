@@ -11,4 +11,9 @@ $(function() {
 		sortBy : 'symbol'
 	});
 	$container.toggleClass('variable-sizes').isotope('reLayout');
+	// change size of clicked element
+    $container.delegate( '.element', 'click', function(){
+      $(this).toggleClass('large');
+      $container.isotope('reLayout');
+    });
 });

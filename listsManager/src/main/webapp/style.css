@@ -166,8 +166,8 @@ body {
 }
 
 .element {
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 150px;
   margin: 5px;
   float: left;
   overflow: hidden;
@@ -231,9 +231,9 @@ body {
   top: 0.5em;
 }
 
-.variable-sizes .element.width2 { width: 230px; }
+.variable-sizes .element.width2 { width: 300px; }
 
-.variable-sizes .element.height2 { height: 230px; }
+.variable-sizes .element.height2 { height: 300px; }
 
 .variable-sizes .element.width2.height2 {
   font-size: 2.0em;
@@ -242,7 +242,7 @@ body {
 .element.large,
 .variable-sizes .element.large,
 .variable-sizes .element.large.width2.height2 {
-  font-size: 3.0em;
+  font-size: 2.0em;
   width: 350px;
   height: 350px;
   z-index: 100;

@@ -44,5 +44,22 @@ public class ListItem {
 		this.thumbnail = thumbnail;
 	}
 	
+	public boolean equals(Object obj) {
+	      if (obj == null) return false;
+	      if (!this.getClass().equals(obj.getClass())) return false;
+
+	      ListItem obj2 = (ListItem)obj;
+	      if((this.code == obj2.getCode()))
+	      {
+	         return true;
+	      }
+	      return false;
+	   }
+	   public int hashCode() {
+	      int tmp = 0;
+	      tmp = description.hashCode();
+	      return tmp;
+	   }
+	
 }
 

@@ -22,11 +22,11 @@ public class TestStoreUserListOperation {
 		Assert.assertNotNull(op.getUserList().getCode());
 	}
 	
+
 	private UserList getUserList(){
-		UserList userList = new UserList();
-		//userList.setCode(110);		
+		UserList userList = new UserList();		
 		userList.setUser(getUser());
-		userList.setTitle("Οι 30 καυτές αθλήτριες που πρέπει να ακολουθήσεις στο Instagram");
+		userList.setTitle("testList new");
 		userList.setItems(getListItems());
 		
 		return userList;
@@ -34,7 +34,7 @@ public class TestStoreUserListOperation {
 	
 	private Set<ListItem> getListItems(){
 		Set<ListItem> list = new HashSet<ListItem>();
-		list.add(createListItem(1, "Jennie Finch @jfinch27"));
+		list.add(createListItem(1,"Jennie Finch @jfinch27"));
 		list.add(createListItem(2, "Victoria Azarenka @vichka35"));
 		list.add(createListItem(3, "Angela Rypien @angela_rypien"));
 		list.add(createListItem(4, "Paula Creamer @paulacreamer1"));
@@ -43,8 +43,9 @@ public class TestStoreUserListOperation {
 	
 	private ListItem createListItem(int code, String description){
 		ListItem item = new ListItem();
-		item.setCode(code);
+		//item.setCode(code);
 		item.setDescription(description);
+		item.setUrl("-");
 		return item;
 	}
 	

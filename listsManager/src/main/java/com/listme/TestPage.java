@@ -12,6 +12,7 @@ import org.apache.wicket.markup.html.WebPage;
 import com.listme.model.ListItem;
 import com.listme.model.UserList;
 import com.listme.operations.GetUserListsOperation;
+import com.listme.panels.CreateUserListPanel;
 import com.listme.panels.ListWall;
 
 public class TestPage 
@@ -23,8 +24,28 @@ extends WebPage{
 	private static final long serialVersionUID = 1L;
 	private String js = "alert('123');";
 	
-	public TestPage(){
-		AjaxLink<String> link = new AjaxLink<String>("addElement") {
+	public TestPage(){ 
+		add(getAddElementLink());
+		add(showCreateUserListLink());
+		add(new ListWall("listWall", getUserWallList()));		
+	}
+	
+	AjaxLink<String> showCreateUserListLink() {
+		return new AjaxLink<String>("createUserList") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick(AjaxRequestTarget target) {
+				CreateUserListPanel panel = new CreateUserListPanel("listWall");
+				getParent().get("listWall").replaceWith(panel);
+				target.add(panel);
+			}
+		};
+	}
+	
+	AjaxLink<String> getAddElementLink() {
+		return new AjaxLink<String>("addElement") {
 
 			private static final long serialVersionUID = 1L;
 
@@ -37,8 +58,6 @@ extends WebPage{
 				target.appendJavaScript(js);
 			}
 		};
-		add(link);
-		add(new ListWall("listWall", getUserWallList()));		
 	}
 	
 	List<UserList> getUserWallList(){

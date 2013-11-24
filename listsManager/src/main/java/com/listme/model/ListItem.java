@@ -1,9 +1,15 @@
 package com.listme.model;
 
 import java.awt.Image;
+import java.io.Serializable;
 
-public class ListItem {
+public class ListItem implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int code;
 	
 	private String url;
@@ -49,7 +55,9 @@ public class ListItem {
 	      if (!this.getClass().equals(obj.getClass())) return false;
 
 	      ListItem obj2 = (ListItem)obj;
-	      if((this.code == obj2.getCode()))
+	      
+	      if(this.description != null && (this.description.equals(obj2.getDescription())))
+	      //if((this.code == obj2.getCode()))
 	      {
 	         return true;
 	      }
@@ -57,7 +65,9 @@ public class ListItem {
 	   }
 	   public int hashCode() {
 	      int tmp = 0;
-	      tmp = description.hashCode();
+	      if (description != null) {	    	  
+	    	  tmp = description.hashCode();
+	      } 
 	      return tmp;
 	   }
 	

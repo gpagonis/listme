@@ -5,9 +5,14 @@
 		<title>Lists for the Masses!</title>
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" 	title="Stylesheet" />
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<nav id="site-nav"><a wicket:id="addElement">Add Element</a></nav>
+		<nav id="site-nav">
+			<a wicket:id="addElement">Add Element</a>
+			<br/>
+			<a wicket:id="createUserList">Create List</a>		
+		</nav>
 		<section id="content">
 			<div wicket:id="listWall"></div>
 		</section>

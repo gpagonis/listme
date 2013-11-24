@@ -24,7 +24,8 @@ public class ListWall extends Panel {
 	 * 
 	 */
 	public ListWall(String id, List<UserList> userLists) {
-		super(id);		
+		super(id);	
+		setOutputMarkupId(true);
 		WebMarkupContainer container = new WebMarkupContainer("container");
 		add(container);
 		RepeatingView userListsRView = new RepeatingView("userLists");

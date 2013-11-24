@@ -1,15 +1,21 @@
 package com.listme.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UserList {
+public class UserList implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private int code;
 	
 	private User user;
 	
-	private String title;
+	private String title = "New title";
 	
 	private Set<ListItem> items = new HashSet<ListItem>();
 	

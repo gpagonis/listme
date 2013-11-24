@@ -13,7 +13,6 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.RefreshingView;
 import org.apache.wicket.markup.repeater.ReuseIfModelsEqualStrategy;
-import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
@@ -32,7 +31,7 @@ public class UserListForm extends Form<UserList> {
 	final RefreshingView<com.listme.model.ListItem> lv;
 
 	public UserListForm(String id, IModel<UserList> model) {
-		super(id, new CompoundPropertyModel<UserList>(model));
+		super(id, model);
 		add(new TextField<String>("title"));
 		// Create a panel within the form, to enable AJAX action
 		final MarkupContainer rowPanel = new WebMarkupContainer("rowPanel");

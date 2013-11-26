@@ -12,9 +12,9 @@
             <column name="title" length="50" />
         </property>
         <many-to-one name="user" class="com.listme.model.User" column="USERNAME"/>
-        <set name="items" cascade="all" order-by="code">
-        	<key column="list_code" not-null="true"/>
-        	<one-to-many class="com.listme.model.ListItem"/>
+        <set name="items" cascade="all" inverse="true">
+            <key column="list_code" />
+            <one-to-many class="com.listme.model.ListItem" />
         </set>
     </class>
 </hibernate-mapping>

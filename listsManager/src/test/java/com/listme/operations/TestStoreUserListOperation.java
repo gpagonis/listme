@@ -1,8 +1,5 @@
 package com.listme.operations;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,29 +18,24 @@ public class TestStoreUserListOperation {
 		op.execute();
 		Assert.assertNotNull(op.getUserList().getCode());
 	}
-	
 
 	private UserList getUserList(){
 		UserList userList = new UserList();		
 		userList.setUser(getUser());
 		userList.setTitle("testList new");
-		userList.setItems(getListItems());
-		
+		createListItems(userList);
 		return userList;
 	}
 	
-	private Set<ListItem> getListItems(){
-		Set<ListItem> list = new HashSet<ListItem>();
-		list.add(createListItem(1,"Jennie Finch @jfinch27"));
-		list.add(createListItem(2, "Victoria Azarenka @vichka35"));
-		list.add(createListItem(3, "Angela Rypien @angela_rypien"));
-		list.add(createListItem(4, "Paula Creamer @paulacreamer1"));
-		return list;
+	private void createListItems(UserList list){
+		list.addItem(createListItem(1,"Jennie Finch @jfinch27"));
+		list.addItem(createListItem(2, "Victoria Azarenka @vichka35"));
+		list.addItem(createListItem(3, "Angela Rypien @angela_rypien"));
+		list.addItem(createListItem(4, "Paula Creamer @paulacreamer1"));
 	}
 	
 	private ListItem createListItem(int code, String description){
 		ListItem item = new ListItem();
-		//item.setCode(code);
 		item.setDescription(description);
 		item.setUrl("-");
 		return item;

@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class ListItem implements Serializable {
 	
 	/**
-	 * 
+	 * serialVersionUID
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -17,6 +17,8 @@ public class ListItem implements Serializable {
 	private String description;
 	
 	private Image thumbnail;
+	
+	private UserList list;
 
 	public String getUrl() {
 		return url;
@@ -53,23 +55,25 @@ public class ListItem implements Serializable {
 	public boolean equals(Object obj) {
 	      if (obj == null) return false;
 	      if (!this.getClass().equals(obj.getClass())) return false;
-
 	      ListItem obj2 = (ListItem)obj;
-	      
-	      if(this.description != null && (this.description.equals(obj2.getDescription())))
-	      //if((this.code == obj2.getCode()))
-	      {
-	         return true;
-	      }
-	      return false;
-	   }
-	   public int hashCode() {
-	      int tmp = 0;
-	      if (description != null) {	    	  
-	    	  tmp = description.hashCode();
-	      } 
-	      return tmp;
-	   }
+	      return this.description != null && this.description.equalsIgnoreCase(obj2.getDescription());
+	}
+   
+	public int hashCode() {
+      int tmp = 0;
+      if (description != null) {	    	  
+    	  tmp = description.hashCode();
+      } 
+      return tmp;
+   }
+	
+	public UserList getList() {
+		return list;
+	}
+	
+	public void setList(UserList list) {
+		this.list = list;
+	}
 	
 }
 

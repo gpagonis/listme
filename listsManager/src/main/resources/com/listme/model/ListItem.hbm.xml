@@ -17,5 +17,8 @@
         <property name="thumbnail" type="binary">
             <column name="pic" />
         </property>
+        <many-to-one name="list">
+        	<column name="list_code" not-null="true"></column>
+        </many-to-one>
     </class>
 </hibernate-mapping>

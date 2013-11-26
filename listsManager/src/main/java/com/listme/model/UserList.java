@@ -7,7 +7,7 @@ import java.util.Set;
 public class UserList implements Serializable{
 
 	/**
-	 * 
+	 * serialVersionUID
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -49,6 +49,11 @@ public class UserList implements Serializable{
 	
 	public void setItems(Set<ListItem> items) {
 		this.items = items;
+	}
+	
+	public void addItem(ListItem item){
+		item.setList(this);
+		getItems().add(item);
 	}
 	
 }

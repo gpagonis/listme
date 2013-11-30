@@ -52,6 +52,7 @@ public class ListItem implements Serializable {
 		this.thumbnail = thumbnail;
 	}
 	
+	@Override
 	public boolean equals(Object obj) {
 	      if (obj == null) return false;
 	      if (!this.getClass().equals(obj.getClass())) return false;
@@ -59,6 +60,7 @@ public class ListItem implements Serializable {
 	      return this.description != null && this.description.equalsIgnoreCase(obj2.getDescription());
 	}
    
+	@Override
 	public int hashCode() {
       int tmp = 0;
       if (description != null) {	    	  

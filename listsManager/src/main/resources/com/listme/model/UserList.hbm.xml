@@ -16,5 +16,9 @@
             <key column="list_code" />
             <one-to-many class="com.listme.model.ListItem" />
         </set>
+        <set name="tags" cascade="save-update" table="list_tag">
+        	<key column="list_code"/>
+        	<many-to-many column="tag_name" class="com.listme.model.Tag"/>
+      	</set>
     </class>
 </hibernate-mapping>

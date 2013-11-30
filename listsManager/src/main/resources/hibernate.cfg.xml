@@ -14,5 +14,6 @@
         <mapping resource="com/listme/model/User.hbm.xml"></mapping>
         <mapping resource="com/listme/model/UserList.hbm.xml"></mapping>
         <mapping resource="com/listme/model/ListItem.hbm.xml"></mapping>
+        <mapping resource="com/listme/model/Tag.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>

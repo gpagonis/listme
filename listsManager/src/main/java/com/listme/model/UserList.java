@@ -19,6 +19,8 @@ public class UserList implements Serializable{
 	
 	private Set<ListItem> items = new HashSet<ListItem>();
 	
+	private Set<Tag> tags = new HashSet<Tag>();
+	
 	public int getCode() {
 		return code;
 	}
@@ -53,7 +55,25 @@ public class UserList implements Serializable{
 	
 	public void addItem(ListItem item){
 		item.setList(this);
-		getItems().add(item);
+		if (items == null){
+			items = new HashSet<ListItem>();
+		}
+		items.add(item);
+	}
+	
+	public Set<Tag> getTags() {
+		return tags;
+	}
+	
+	public void setTags(Set<Tag> tags) {
+		this.tags = tags;
+	}
+	
+	public void addTag(Tag tag){
+		if (tags == null){
+			tags = new HashSet<Tag>();
+		}
+		tags.add(tag);
 	}
 	
 }

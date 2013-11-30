@@ -72,5 +72,23 @@ implements Serializable{
 	public void setFavoriteUsers(List<User> favoriteUsers) {
 		this.favoriteUsers = favoriteUsers;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null || (!(obj instanceof User))){
+			return false;
+		}
+		User u = (User) obj;
+		return username.equals(u.getUsername());
+	}
+	
+	@Override
+	public int hashCode() {
+		int tmp = 0;
+		if (username != null) {	    	  
+			tmp = username.hashCode();
+		} 
+		return tmp;
+	}
 
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:wicket>
+<body>
+	<wicket:head>
+	    <script type="text/javascript" wicket:id="loginCallback"></script>
+	    <script type="text/javascript" wicket:id="logoutCallback"></script>
+    </wicket:head>
+    <wicket:panel>
+<!--         <fb:login-button autologoutlink="true" perms="email" > -->
+<!--         </fb:login-button> -->
+        <div class="fb-login-button">Login with Facebook</div>
+        <!-- Facebook-API -->
+        <div id="fb-root">
+        </div>
+        <script wicket:id="FBapi">  <!-- calling Facebook API, init and check login -->
+        </script>
+    </wicket:panel>
+</body>
+</html>

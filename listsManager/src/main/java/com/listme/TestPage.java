@@ -13,6 +13,7 @@ import com.listme.model.ListItem;
 import com.listme.model.UserList;
 import com.listme.operations.GetUserListsOperation;
 import com.listme.panels.CreateUserListPanel;
+import com.listme.panels.FacebookSignInPanel;
 import com.listme.panels.ListWall;
 
 public class TestPage 
@@ -27,6 +28,7 @@ extends WebPage{
 	public TestPage(){ 
 		add(getAddElementLink());
 		add(showCreateUserListLink());
+		add(new FacebookSignInPanel("fbLogin"));
 		add(new ListWall("listWall", getUserWallList()));		
 	}
 	

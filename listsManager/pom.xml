@@ -47,7 +47,14 @@
 	</properties>
 	<dependencies>
 		
-		   <!-- MySQL database driver -->
+		<!-- facebook rest fb api -->
+		<dependency>
+  			<groupId>com.restfb</groupId>
+  			<artifactId>restfb</artifactId>
+  			<version>1.6.12</version>
+		</dependency>
+		
+		<!-- MySQL database driver -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -78,6 +85,11 @@
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-extensions</artifactId>
 			<version>${wicket.version}</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.wicket</groupId>
+    		<artifactId>wicket-auth-roles</artifactId>
+    		<version>${wicket.version}</version>
 		</dependency>
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
